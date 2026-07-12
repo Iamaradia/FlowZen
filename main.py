@@ -1,30 +1,18 @@
-import cv2 as cv
+import sys
 
-cam = cv.VideoCapture(0)
+from PySide6.QtWidgets import QApplication
 
-if not cam.isOpened():
-    print("Could not open webcam")
-    exit()
+from app_window import MainWindow
 
 
-while True:
-    # Read frame
-    ret, frame = cam.read()
+def main():
+    app = QApplication(sys.argv)
 
-    if not ret:
-        break
+    window = MainWindow()
+    window.show()
 
-    # Display
-    cv.imshow('Webcam', frame)
+    sys.exit(app.exec())
 
-    # Break on 'q' key
-    if cv.waitKey(1) & 0xFF == ord('q'):
-        break
 
-    # Break on exiting the window
-    if cv.getWindowProperty("Webcam", cv.WND_PROP_VISIBLE) < 1:
-        break
-
-cam.release()
-cv.destroyAllWindows()
-
+if __name__ == "__main__":
+    main()
