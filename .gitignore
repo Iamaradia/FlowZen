@@ -2,10 +2,15 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.tox/
+.nox/
+.cache/
 
 # Virtual environments
 .venv/
+.venv*/
 venv/
+venv*/
 env/
 
 # Test, type-checker, and coverage caches
@@ -13,10 +18,12 @@ env/
 .mypy_cache/
 .ruff_cache/
 .coverage
+.coverage.*
 htmlcov/
 
 # Local application data
 focus_data.db
+focus_data.db-*
 *.db-journal
 *.db-shm
 *.db-wal
@@ -24,10 +31,20 @@ focus_data.db
 # Environment variables and logs
 .env
 .env.*
+!.env.example
+!.env.template
 *.log
+*.pem
+*.key
 
 # IDE and operating-system files
 .idea/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Generated application/build artifacts
+build/
+dist/
+*.qmlc
+*.jsc

@@ -1,8 +1,6 @@
 import time
 from datetime import datetime
 
-import face_tracker
-
 
 class FocusTracker:
     def __init__(self):
@@ -35,6 +33,9 @@ class FocusTracker:
         self.frame_count = 0
 
     def process_frame(self, frame_rgb):
+        # Load detection models only when a camera is actually in use.
+        from backend import face_tracker
+
         # MediaPipe VIDEO mode requires monotonically increasing timestamps.
         frame_timestamp_ms = int(time.perf_counter() * 1000)
 

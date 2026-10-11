@@ -1,0 +1,6 @@
+module DesignTokens
+
+FlowZenTheme 1.0 FlowZenTheme.qml
+FlowZenColors 1.0 FlowZenColors.qml
+FlowZenNumbers 1.0 FlowZenNumbers.qml
+singleton FlowZen 1.0 FlowZen.qml

@@ -5,21 +5,19 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 from ultralytics import YOLO
 
-PROJECT_DIR = Path(__file__).resolve().parent
-face_model_path = str(PROJECT_DIR / "models" / "face_landmarker.task")
-object_model_path = str(PROJECT_DIR / "yolo26n.pt")
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+FACE_MODEL_PATH = PROJECT_DIR / "models" / "face_landmarker.task"
+YOLO_MODEL_PATH = PROJECT_DIR / "models" / "yolo26n.pt"
 
 face_options = vision.FaceLandmarkerOptions(
-    base_options=python.BaseOptions(
-        model_asset_path=face_model_path
-    ),
+    base_options=python.BaseOptions(model_asset_path=str(FACE_MODEL_PATH)),
     running_mode=vision.RunningMode.VIDEO,
     num_faces=1
 )
 
 face_detector = vision.FaceLandmarker.create_from_options(face_options)
 
-object_model = YOLO(object_model_path)
+object_model = YOLO(YOLO_MODEL_PATH)
 
 def track_frame(frame_rgb, frame_timestamp_ms, phone_detection=False):
     mediapipe_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=frame_rgb)

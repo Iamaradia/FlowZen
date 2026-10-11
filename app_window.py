@@ -2,9 +2,9 @@ import cv2 as cv
 from PySide6.QtCore import QTimer, Qt
 from PySide6.QtWidgets import QMainWindow, QDialog, QDialogButtonBox
 from mainwindow_ui import Ui_MainWindow
-from focus_tracker import FocusTracker
+from backend.focus_tracker import FocusTracker
 from PySide6.QtGui import QImage, QPixmap
-import database
+from backend import database
 from save_dialog_ui import Ui_Dialog
 
 
