@@ -2,6 +2,8 @@
 
 FlowZen is a focus detector with camera focus tracking and app detection. I needed something that would keep me dependable and not let me scroll or play games while I was supposed to study. This app lets me do this and more.
 
+**THIS APP DOES NOT WORK ON NON WINDOWS OS. ALSO IT WILL TAKE A LONG TIME TO BOOT ON YOUR FIRST TRY.**
+
 <img width="1533" height="816" alt="image" src="https://github.com/user-attachments/assets/219d559d-8705-4772-bf6b-0d8514b6d590" />
 
 ## Download
